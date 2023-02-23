@@ -293,6 +293,13 @@
 			  }
 			});
 			</script>
-
+			<script>
+			  var form = document.querySelector('form');
+			  form.addEventListener('submit', function(event) {
+			    form.reset();
+			    window.scrollTo(0, 0);
+			    return true;
+			  });
+			</script>
 	</body>
 </html>
