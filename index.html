@@ -11,8 +11,8 @@
 			<nav id="nav">
 				<ul class="container">
 					<li><a href="#top">Top</a></li>
-					<li><a href="#work">Skills</a></li>
-					<li><a href="#portfolio">Projects</a></li>
+					<li><a href="#work">Skills, Technologies & Projects</a></li>
+					<li><a href="#portfolio">Images</a></li>
 					<li><a href="#contact">Contact</a></li>
 				</ul>
 			</nav>
@@ -26,9 +26,10 @@
 						</div>
 						<div class="col-8 col-7-large col-12-medium">
 							<header>
-								<h1>Hi. I'm <strong>Guillermina Fernandez</strong>.</h1>
+								<h1>Hi there,</h1>
+								<h1>I'm <strong>Guillermina Fernandez</strong>.</h1>
 							</header>
-							<p>Fast learner, self-trained, independent <strong>Python developer</strong> who loves solving problems and making processes more efficient. Find out more about me in my
+							<p>Fast learner, self-trained, independent <strong>Python developer</strong> with a passion for problem-solving and making processes more efficient. I'm adaptable to new tasks and obligations and always eager to learn and grow. Find out more about me in my
 								<a href="FERNANDEZ GUILLERMINA - Python Developer.pdf" target="_blank">Curriculum Vitae</a>
 								or look me up in <a href="https://www.linkedin.com/in/guillermina-fernandez-b436391ab/?locale=en_US" target="_blank">LinkedIn</a> or <a href="https://github.com/guillermina-fernandez" target="_blank">GitHub</a>.</p>
 							<a href="#work" class="button large scrolly">Learn more about my skills</a>
@@ -42,25 +43,27 @@
 				<div class="container">
 					<header>
 						<h2>Skills and Technologies</h2>
-						<p><strong>I have worked on the fullstack development of a custom accounting software for shipping agencies and a web application for shipping agencies' operations. <br/>
-							<br/>Project management, Software architecture, Coding.</strong></p>
+						<p><strong>I'm currently working with <span style="color: blue;">Python</span> and <span style="color: blue;">Django</span>, implementing databases with <span style="color: blue;">MySQL</span> and <span style="color: blue;">SQL</span> and streamlining various processes with <span style="color: blue;">JavaScript</span>.</strong></p>
+						<br>
+						<p><strong>I have worked on the <span style="color: blue;">fullstack development</span> of a custom accounting software for shipping agencies and a web application for shipping agencies' operations.</strong></p>
+						<br>
+						<p><strong><span style="color: blue;">Project management, Software architecture, Coding.</span><br>I studied the business model and its requirements, laid out the models and relations, designed the UIs, and managed all database queries and controllers.</strong></p>
 					</header>
 					<div class="row aln-center">
 						<div class="col-4 col-6-medium col-12-small">
 							<section class="box style1">
 								<span></span>
 								<h3>Python</h3>
-								<p><strong>Both projects are written in Python. <br/>
-									I also used Python libraries such as openpyxl, fillpdf, datetime, PyQt5 and fpdf. <br/>
-									Also implemented Regex and Selenium for form filling automation.</strong></p>
+								<p><strong>Both projects are written in Python.</strong></p>
+								<p><strong>Some used modules and libraries:<br>Regex, Selenium, BeautifulSoup, openpyxl, fillpdf, PyQt5, fpdf, os, datetime, json.</strong></p>
 							</section>
 						</div>
 						<div class="col-4 col-6-medium col-12-small">
 							<section class="box style1">
 								<span></span>
 								<h3>Django</h3>
-								<p><strong>Used for the web application. <br/>
-									Complemented with HTML, CSS and Bootstrap for the frontend design. <br/>
+								<p><strong>Used for the web application. <br>
+									Complemented with HTML, CSS and Bootstrap for the frontend design. <br>
 									Used JavaScript to enhance the user experience and streamline various processes.</strong></p>
 							</section>
 						</div>
@@ -68,7 +71,7 @@
 							<section class="box style1">
 								<span></span>
 								<h3>Databases</h3>
-								<p><strong>Implemented all database queries and configured the needed connections. <br/>
+								<p><strong>Database queries and configuration of the needed connections. <br>
 									MySQL and MySQL Workbench for the accounting software and Django's built-in SQLite database for the web application.</strong></p>
 							</section>
 						</div>
@@ -83,70 +86,94 @@
 			<article id="portfolio" class="wrapper style3">
 				<div class="container">
 					<header>
-						<h2>Here are some images of my projects.</h2>
+						<h2>Image Gallery</h2>
+						<p><strong>(click on each link to open the image)</strong></p>
 					</header>
 					<div class="row">
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured" onclick="openModal('images/altabuque.jpg')">
-									<img src="images/altabuque.jpg" alt="" /></a>
-								<h3>CRUD Vessels</h3>
-								<h4>Accounting software</h4>
-								<p><strong>Vessel's relevant information for processing and billing. <br/>
-									Every vessel can moore in several Terminals in the same trip. Once its billed, its status (ESTADO) is changed to "Closed" and it can no longer accept any modifications or inputs. </strong></p>
+						<div class="col-6 col-6-medium col-12-small">
+							<article class="box style1">
+								<h3>Web Application</h3>
+								<ul style="text-align: left;">
+									<a href="#" onclick="openModal('images/01. Inicio.png')" style="text-decoration: none;">
+										<li style="list-style-position: inside;"><strong>Menu - Main</strong></li>
+									</a>
+									<a href="#" onclick="openModal('images/02. Nuevo comprobante.png')" style="text-decoration: none;">
+										<li style="list-style-position: inside;"><strong>Invoice - New</strong></li>
+									</a>
+									<a href="#" onclick="openModal('images/03. Consulta comprobante.png')" style="text-decoration: none;">
+										<li style="list-style-position: inside;"><strong>Invoice/s - Search</strong></li>
+									</a>
+									<a href="#" onclick="openModal('images/04. Chequear comprobantes vs Afip.png')" style="text-decoration: none;">
+										<li style="list-style-position: inside;"><strong>Invoice/s - Check against AFIP</strong></li>
+									</a>
+									<a href="#" onclick="openModal('images/05. Nueva orden de pago.png')" style="text-decoration: none;">
+										<li style="list-style-position: inside;"><strong>Payment Order - New</strong></li>
+									</a>
+									<a href="#" onclick="openModal('images/06. Consulta orden de pago.png')" style="text-decoration: none;">
+										<li style="list-style-position: inside;"><strong>Payment Order/s - Search</strong></li>
+									</a>
+									<a href="#" onclick="openModal('images/07. ABM Proveedores.png')" style="text-decoration: none;">
+										<li style="list-style-position: inside;"><strong>Suppliers - CRUD</strong></li>
+									</a>
+									<a href="#" onclick="openModal('images/08. ABM Facturas emitidas.png')" style="text-decoration: none;">
+										<li style="list-style-position: inside;"><strong>Own Invoices - CRUD</strong></li>
+									</a>
+									<a href="#" onclick="openModal('images/09. ABM Anticipos recibidos.png')" style="text-decoration: none;">
+										<li style="list-style-position: inside;"><strong>Advance Payments - CRUD</strong></li>
+									</a>
+									<a href="#" onclick="openModal('images/10. Estado de cuenta clientes.png')" style="text-decoration: none;">
+										<li style="list-style-position: inside;"><strong>Clients - Statement Account</strong></li>
+									</a>
+									<a href="#" onclick="openModal('images/11. ABM Clientes.png')" style="text-decoration: none;">
+										<li style="list-style-position: inside;"><strong>Clients - CRUD</strong></li>
+									</a>
+									<a href="#" onclick="openModal('images/12. Alta Buque.png')" style="text-decoration: none;">
+										<li style="list-style-position: inside;"><strong>Vessel - New</strong></li>
+									</a>
+									<a href="#" onclick="openModal('images/13. BM Buque.png')" style="text-decoration: none;">
+										<li style="list-style-position: inside;"><strong>Vessel - Update/Delete</strong></li>
+									</a>
+									<a href="#" onclick="openModal('images/14. ABM Serenos y Encargados.png')" style="text-decoration: none;">
+										<li style="list-style-position: inside;"><strong>Watchmen & Head Tally Clerks - Request </strong></li>
+									</a>
+									<a href="#" onclick="openModal('images/15. ABM Planilla Serenos y Encargado.png')" style="text-decoration: none;">
+										<li style="list-style-position: inside;"><strong>Watchmen & HTCs - Timesheet & Receipts</strong></li>
+									</a>
+									<a href="#" onclick="openModal('images/16. Control Empleados.png')" style="text-decoration: none;">
+										<li style="list-style-position: inside;"><strong>Watchmen & HTCs - Check against AFIP</strong></li>
+									</a>
+									<a href="#" onclick="openModal('images/17. ABM Empleados.png')" style="text-decoration: none;">
+										<li style="list-style-position: inside;"><strong>Watchmen & HTCs - CRUD</strong></li>
+									</a>
+								</ul>
 							</article>
 						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured" onclick="openModal('images/altacomp.jpg')">
-									<img src="images/altacomp.jpg" alt="" />
-								</a>
-								<h3>CRUD Invoices</h3>
-								<h4>Accounting software</h4>
-								<p><strong>Every invoice has a debit account and a credit account to make up the corresponding accounting entry.
-								Also, can have several items corresponding to different vessels and services.</strong></p>
-							</article>
-						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured" onclick="openModal('images/altaop.jpg')">
-									<img src="images/altaop.jpg" alt="" />
-								</a>
-								<h3>CRUD Payment Order</h3>
-								<h4>Accounting software</h4>
-								<p><strong>Every payment order has one or more debit accounts and one or more credit accounts to make up the corresponding accounting entry.
-								Each invoice being paid has its debit account (set on invoice registration). Credit accounts are set in each payment order, as well as the payment method.</strong></p>
-							</article>
-						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured" onclick="openModal('images/testvessel.jpg')">
-									<img src="images/testvessel.jpg" alt="" />
-								</a>
-								<h3>CRUD Vessel</h3>
-								<h4>Web application</h4>
-								<p><strong>Vessel's relevant information for processing and billing.
-								Needed information for operations and generation of documentation. </strong></p>
-							</article>
-						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<<a href="#" class="image featured" onclick="openModal('images/embarco.jpg')">
-									<img src="images/embarco.jpg" alt="" />
-								</a>
-								<h3>Crew Changes</h3>
-								<h4>Web application</h4>
-								<p><strong>Create and export to PDF documentation regarding crew members embarkments and disembarkments. </strong></p>
-							</article>
-						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured" onclick="openModal('images/recibosereno.jpg')">
-									<img src="images/recibosereno.jpg" alt="" />
-								</a>
-								<h3>Watchmen payroll</h3>
-								<h4>Web application</h4>
-								<p><strong>Create and export to PDF. </strong></p>
+						<div class="col-6 col-6-medium col-12-small">
+							<article class="box style1">
+								<h3>Desktop Software</h3>
+								<ul style="text-align: left;">
+									<a href="#" onclick="openModal('images/desktop/01. Menu.png')" style="text-decoration: none;">
+										<li style="list-style-position: inside;"><strong>Menu - Main</strong></li>
+									</a>
+									<a href="#" onclick="openModal('images/desktop/02. Alta Factura.png')" style="text-decoration: none;">
+										<li style="list-style-position: inside;"><strong>Invoice - New</strong></li>
+									</a>
+									<a href="#" onclick="openModal('images/desktop/03. Buscar Factura.png')" style="text-decoration: none;">
+										<li style="list-style-position: inside;"><strong>Invoice/s - Search</strong></li>
+									</a>
+									<a href="#" onclick="openModal('images/desktop/04. Alta OP.png')" style="text-decoration: none;">
+										<li style="list-style-position: inside;"><strong>Payment Order - New</strong></li>
+									</a>
+									<a href="#" onclick="openModal('images/desktop/05. Buscar OP.png')" style="text-decoration: none;">
+										<li style="list-style-position: inside;"><strong>Payment Order/s - Search</strong></li>
+									</a>
+									<a href="#" onclick="openModal('images/desktop/06. Alta Proveedor.png')" style="text-decoration: none;">
+										<li style="list-style-position: inside;"><strong>Suppliers - CRUD</strong></li>
+									</a>
+									<a href="#" onclick="openModal('images/desktop/07. Alta Buque.png')" style="text-decoration: none;">
+										<li style="list-style-position: inside;"><strong>Vessel - CRUD</strong></li>
+									</a>
+								</ul>
 							</article>
 						</div>
 					</div>
