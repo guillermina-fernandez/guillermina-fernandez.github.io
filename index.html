@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Guillermina Fernandez - Fullstack Developer</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <!-- fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+
+  <!--cdncss link-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+  <link rel="stylesheet" href="css/lightbox.min.css">
+
+  <!--style sheet-->
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+  .project-img {
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+    margin: 1rem 0;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+
+  .project-img:hover {
+    transform: scale(1.02);
+  }
+
+  /* Lightbox styles */
+  .lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1050;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+  }
+
+  .lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+  }
+
+  .lightbox .close {
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+</style>
+<style>
+  /* Container setup */
+  .project-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 550px; /* consistent height */
+  }
+
+  /* Title: fixed height for ~2 lines */
+  .project-title {
+    min-height: 4.5rem; /* controls space for two lines */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .project-title h3 {
+    font-size: 1.8rem;
+    line-height: 1.2;
+    margin: 0;
+  }
+
+  /* Image: flexible but centered */
+  .project-image {
+    flex-grow: 1; /* takes available space */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0;
+  }
+
+  .project-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 1rem;
+  }
+
+  /* Text: fixed at bottom */
+  .project-text {
+    min-height: 8rem; /* consistent text area height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .project-text p {
+    font-size: 1.1rem;
+    margin: 0;
+    padding: 0 0.5rem;
+  }
+</style>
+</head>
+
+<body>
+  <!--svg icons-->
+  <svg>
+    <symbol id="whatsapp" viewBox="0 0 24 24">
+      <path fill="currentColor"
+        d="M16.6 14c-.2-.1-1.5-.7-1.7-.8c-.2-.1-.4-.1-.6.1c-.2.2-.6.8-.8 1c-.1.2-.3.2-.5.1c-.7-.3-1.4-.7-2-1.2c-.5-.5-1-1.1-1.4-1.7c-.1-.2 0-.4.1-.5c.1-.1.2-.3.4-.4c.1-.1.2-.3.2-.4c.1-.1.1-.3 0-.4c-.1-.1-.6-1.3-.8-1.8c-.1-.7-.3-.7-.5-.7h-.5c-.2 0-.5.2-.6.3c-.6.6-.9 1.3-.9 2.1c.1.9.4 1.8 1 2.6c1.1 1.6 2.5 2.9 4.2 3.7c.5.2.9.4 1.4.5c.5.2 1 .2 1.6.1c.7-.1 1.3-.6 1.7-1.2c.2-.4.2-.8.1-1.2zm2.5-9.1C15.2 1 8.9 1 5 4.9c-3.2 3.2-3.8 8.1-1.6 12L2 22l5.3-1.4c1.5.8 3.1 1.2 4.7 1.2c5.5 0 9.9-4.4 9.9-9.9c.1-2.6-1-5.1-2.8-7m-2.7 14c-1.3.8-2.8 1.3-4.4 1.3c-1.5 0-2.9-.4-4.2-1.1l-.3-.2l-3.1.8l.8-3l-.2-.3c-2.4-4-1.2-9 2.7-11.5S16.6 3.7 19 7.5c2.4 3.9 1.3 9-2.6 11.4" />
+    </symbol>
+    <symbol id="github" viewBox="0 0 24 24">
+      <path fill="currentColor"
+        d="M10.07 20.503a1 1 0 0 0-1.18-.983c-1.31.24-2.963.276-3.402-.958a5.708 5.708 0 0 0-1.837-2.415a1.2 1.2 0 0 1-.167-.11a1 1 0 0 0-.93-.645h-.005a1 1 0 0 0-1 .995c-.004.815.81 1.338 1.141 1.514a4.44 4.44 0 0 1 .924 1.36c.365 1.023 1.423 2.576 4.466 2.376l.003.098l.004.268a1 1 0 0 0 2 0l-.005-.318c-.005-.19-.012-.464-.012-1.182M20.737 5.377a5.39 5.39 0 0 0 .09-.42a6.278 6.278 0 0 0-.408-3.293a1.002 1.002 0 0 0-.615-.58c-.356-.12-1.67-.357-4.184 1.25a13.87 13.87 0 0 0-6.354 0C6.762.75 5.455.966 5.102 1.079a.997.997 0 0 0-.631.584a6.3 6.3 0 0 0-.404 3.357c.025.127.051.246.079.354a6.27 6.27 0 0 0-1.256 3.83a8.422 8.422 0 0 0 .043.921c.334 4.603 3.334 5.984 5.424 6.459a4.591 4.591 0 0 0-.118.4a1 1 0 0 0 1.942.479a1.678 1.678 0 0 1 .468-.878a1 1 0 0 0-.546-1.745c-3.454-.395-4.954-1.802-5.18-4.899a6.61 6.61 0 0 1-.033-.738a4.258 4.258 0 0 1 .92-2.713a3.022 3.022 0 0 1 .195-.231a1 1 0 0 0 .188-1.025a3.388 3.388 0 0 1-.155-.555a4.094 4.094 0 0 1 .079-1.616a7.543 7.543 0 0 1 2.415 1.18a1.009 1.009 0 0 0 .827.133a11.777 11.777 0 0 1 6.173.001a1.005 1.005 0 0 0 .83-.138a7.572 7.572 0 0 1 2.406-1.19a4.04 4.04 0 0 1 .087 1.578a3.205 3.205 0 0 1-.169.607a1 1 0 0 0 .188 1.025c.078.087.155.18.224.268A4.122 4.122 0 0 1 20 9.203a7.039 7.039 0 0 1-.038.777c-.22 3.056-1.725 4.464-5.195 4.86a1 1 0 0 0-.546 1.746a1.63 1.63 0 0 1 .466.908a3.06 3.06 0 0 1 .093.82v2.333c-.01.648-.01 1.133-.01 1.356a1 1 0 1 0 2 0c0-.217 0-.692.01-1.34v-2.35a4.882 4.882 0 0 0-.155-1.311a4.256 4.256 0 0 0-.116-.416a6.513 6.513 0 0 0 5.445-6.424A8.697 8.697 0 0 0 22 9.203a6.13 6.13 0 0 0-1.263-3.826" />
+    </symbol>
+    <symbol id="monitor" viewBox="0 0 24 24">
+      <path fill="#4ba1a7"
+        d="M19 2H5a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h2.64l-.58 1a2 2 0 0 0 0 2a2 2 0 0 0 1.75 1h6.46A2 2 0 0 0 17 21a2 2 0 0 0 0-2l-.59-1H19a3 3 0 0 0 3-3V5a3 3 0 0 0-3-3M8.77 20L10 18h4l1.2 2ZM20 15a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-1h16Zm0-3H4V5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1Z" />
+    </symbol>
+    <symbol id="notes" viewBox="0 0 24 24">
+      <path fill="#4ba1a7"
+        d="M16 14H8a1 1 0 0 0 0 2h8a1 1 0 0 0 0-2m0-4h-6a1 1 0 0 0 0 2h6a1 1 0 0 0 0-2m4-6h-3V3a1 1 0 0 0-2 0v1h-2V3a1 1 0 0 0-2 0v1H9V3a1 1 0 0 0-2 0v1H4a1 1 0 0 0-1 1v14a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3V5a1 1 0 0 0-1-1m-1 15a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6h2v1a1 1 0 0 0 2 0V6h2v1a1 1 0 0 0 2 0V6h2v1a1 1 0 0 0 2 0V6h2Z" />
+    </symbol>
+    <symbol id="laptop" viewBox="0 0 24 24">
+      <path fill="#4ba1a7"
+        d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-2a1 1 0 0 0-1-1M6 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7H6Zm14 10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-1h16Z" />
+    </symbol>
+    <symbol id="menu" viewBox="0 0 24 24">
+      <path fill="black"
+        d="M4 6a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H5a1 1 0 0 1-1-1m0 12a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H5a1 1 0 0 1-1-1m7-7a1 1 0 1 0 0 2h8a1 1 0 1 0 0-2z" />
+    </symbol>
+  </svg>
+
+  <header id="top" class="position-sticky top-0 start-0" style="z-index:10;">
+    <nav class="navbar bg-white fixed-top">
+      <div class="container-fluid">
+        <div class="d-flex align-items-center g-4">
+          <a class="navbar-brand d-flex fs-4 fw-bold" href="#home">
+            Guillermina Fernandez
+          </a>
+          <div class="icon px-5">
+            <a href="https://wa.me/+5493415916328" class="text-decoration-none" target="_blank">
+              <svg class="whatsapp" width="24" height="24">
+                <use xlink:href="#whatsapp"></use>
+              </svg>
+            </a>
+            <a href="https://github.com/guillermina-fernandez" class="text-decoration-none" target="_blank">
+              <svg class="github" width="24" height="24">
+                <use xlink:href="#github"></use>
+              </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/guillermina-fernandez-34116938b/" class="text-decoration-none" target="_blank">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+  <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
+</svg>
+            </a>
+          </div>
+          <a href="mailto:guillermina.fernandez.dev@gmail.com" class="text-black text-decoration-none">guillermina.fernandez.dev@gmail.com</a>
+
+        </div>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+          <span class="navabar-toggler-icon">
+            <svg class="text-primary menu" width="32" height="32">
+              <use xlink:href="#menu"></use>
+            </svg>
+          </span>
+        </button>
+        <div class="offcanvas offcanvas-end text-white bg-black" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <button type="button" class="btn-close btn-close-white ms-3" data-bs-dismiss="offcanvas"
+              aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav flex-grow-1 p-4">
+              <li class="nav-item">
+                <a class="nav-link active text-uppercase ls-4 text-white" aria-current="page" href="#home">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-uppercase ls-4 text-white" aria-current="page" href="#latest-projects">Latest Projects 
+                </a>
+              </li>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-uppercase ls-4 text-white" aria-current="page" href="#highlights">Highlights 
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-uppercase ls-4 text-white" aria-current="page" href="#other-tools">Other Tools 
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-uppercase ls-4 text-white" aria-current="page" href="#footer">Contact 
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div id="home" style="position: relative; top: -80px;"></div>
+ <section>
+  <div class="container">
+    <div class="banner rounded-4"
+      style="
+        background-image: url('images/sec01.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        aspect-ratio: 36.15 / 20.30;
+        width: 100%;
+      ">
+    </div>
+  </div>
+</section>
+<div id="latest-projects" style="position: relative; top: -80px;"></div>
+  <section class="p-5">
+  <div class="container">
+    <div class="text-center">
+      <h2 class="display-3 mb-5">LATEST PROJECTS</h2>
+    </div>
+
+    <div class="row g-4">
+  
+     
+      <!-- Project 1 -->
+  <div class="col-lg-4">
+    <div class="project-card p-4 rounded-4 text-center" style="background-color: #B186E7;">
+      <div class="project-title">
+        <h3>Customs Brokers'<br>Platform</h3>
+      </div>
+      <div class="project-image">
+        <img src="images/customs.png" class="project-img" alt="Customs Brokers Platform">
+      </div>
+      <div class="project-text">
+        <p class="fs-4">
+          Created and launched a customs operations web app to keep track of operations, perform automatic business calculations, and generate downloadable required documents.
+        </p>
+      </div>
+    </div>
+  </div>
+
+ <!-- Project 3 -->
+  <div class="col-lg-4">
+    <div class="project-card p-4 rounded-4 text-center" style="background-color: #D5F379;">
+      <div class="project-title">
+        <h3>Shipping Agencies'<br>Web Application</h3>
+      </div>
+      <div class="project-image">
+        <img src="images/goShipping - vessel01.png" class="project-img" alt="Shipping Agencies' Web App">
+      </div>
+      <div class="project-text">
+        <p class="fs-4">
+          Built and deployed a platform for shipping agencies' accounting and operations increasing productivity, reducing errors and giving access to information from everywhere.
+        </p>
+      </div>
+    </div>
+  </div>
+  
+
+  <!-- Project 2 -->
+  <div class="col-lg-4">
+    <div class="project-card p-4 rounded-4 text-center" style="background-color: #E8E8E8;">
+      <div class="project-title">
+        <h3>Real Estate<br>Management Tool</h3>
+      </div>
+      <div class="project-image">
+        <img src="images/realestate.png" class="project-img" alt="Real Estate Tool">
+      </div>
+      <div class="project-text">
+        <p class="fs-4">
+          Developed a web-based real estate tool for centralized property info (taxes, rent contracts and rent value actualization, expenses, collections) and payment agenda.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  
+</div>
+
+<!-- Lightbox modal -->
+<div id="lightbox" class="lightbox">
+  <span class="close">&times;</span>
+  <img id="lightbox-img" src="">
+</div>
+
+  <section class="py-5" id="highlights">
+    <div class="container">
+      <div class="rounded-4 p-5"
+        style="background-color: #D5F379;background-size: cover ; background-repeat: no-repeat; background-position: center;">
+        <div class="row">
+          <div class="">
+            <div class="h-100 bg-black text-white p-4 rounded-4">
+              <h3>
+                HIGHLIGHTS - Key Features:
+              </h3>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="">
+            <div class="h-100 bg-black text-white p-4 rounded-4">
+              <p class="fs-3">
+                * Automated manual tasks and report generation, significantly reducing processing time.<br><br>
+                * Strengthened data integrity through validated DRF serializers and ORM optimization.<br><br>
+                * Implemented two-facto authentication (email-based).<br><br>
+                * Configured user permissions and authorizations based on role groups.<br><br>
+                * Deployed applications on the web and on local servers.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div id="other-tools" style="position: relative; top: -80px;"></div>
+<section>
+  <div class="container">
+    <div class="banner rounded-4"
+      style="
+        background-image: url('images/sec04.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        aspect-ratio: 36.15 / 20.30;
+        width: 100%;
+      ">
+    </div>
+  </div>
+</section>
+  
+<footer id="footer" class="text-black rounded-4" style="background-color: #B186E7;">
+    <div class="container-sm">
+      <div class="row g-md-5 my-5 mx-5">
+        <div class="col-md-4">
+          <div class="info-box">
+            <h4 class="">Guillermina Fernandez</h4>
+            <p class="fs-5">
+              Fullstack Developer
+            </p>
+            <p>
+            Feel free to contact me at:
+          </p>
+          <h3>
+            <a href="mailto:guillermina.fernandez.dev@gmail.com" class="text-white text-decoration-none">guillermina.fernandez.dev@gmail.com</a>
+          </h3>
+            <div class="social-links mt-4">
+              <a href="https://wa.me/+5493415916328" class="text-decoration-none" target="_blank">
+              <svg class="whatsapp" width="24" height="24">
+                <use xlink:href="#whatsapp"></use>
+              </svg>
+            </a>
+            <a href="https://github.com/guillermina-fernandez" class="text-decoration-none" target="_blank">
+              <svg class="github" width="24" height="24">
+                <use xlink:href="#github"></use>
+              </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/guillermina-fernandez-34116938b/" class="text-decoration-none" target="_blank">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+  <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
+</svg>
+            </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 offset-md-5">
+          <div class="row">
+            <div class="">
+              <ul class="list-unstyled">
+                <li>
+                  <a class="text-decoration-none text-white" href="#home">Home</a>
+                </li>
+                <li>
+                  <a class="text-decoration-none text-white" href="#latest-projects">Latest Projects</a>
+                </li>
+                <li>
+                  <a class="text-decoration-none text-white" href="#highlights">Highlights</a>
+                </li>
+                <li>
+                  <a class="text-decoration-none text-white" href="#other-tools">Other Tools</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row text-end">
+        <p>©2024 Jessica. Free HTML Template by <a href="https://templatesjungle.com/" class="text-white" target="_blank">TemplatesJungle</a>. Distributed By <a href="https://themewagon.com" class="text-white" target="blamk">ThemeWagon</a> </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="js/jquery-1.11.0.min.js"></script> <!-- jquery file-->
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script> <!--cdn link-->
+  <script src="js/plugins.js"></script>
+  <script type="text/javascript" src="js/lightbox.min.js"></script>
+
+  <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+  <script src="js/script.js"></script>
+
+  <script>
+  // Lightbox logic
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const closeBtn = document.querySelector('.lightbox .close');
+
+  document.querySelectorAll('.project-img').forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightbox.style.display = 'flex';
+    });
+  });
+
+  closeBtn.addEventListener('click', () => lightbox.style.display = 'none');
+  lightbox.addEventListener('click', e => {
+    if (e.target === lightbox) lightbox.style.display = 'none';
+  });
+</script>
+</body>
+
+</html>
